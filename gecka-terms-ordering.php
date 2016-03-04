@@ -261,6 +261,8 @@ class Gecka_Terms_Ordering {
 		// no nextid meaning our term is in last position
 		if( $term_in_level && null === $next_id )
 		$index = $this->set_term_order( $id, $taxonomy, $index+1, true );
+		
+		wp_cache_delete( 'last_changed', 'terms' );
 
 		return $index;
 
